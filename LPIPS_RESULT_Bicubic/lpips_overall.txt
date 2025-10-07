@@ -1,0 +1,1 @@
+Overall LPIPS mean (vgg): 0.388590
