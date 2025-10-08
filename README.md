@@ -48,7 +48,7 @@ conda install -r requirements.txt
 The raw dataset used in the experiment and the datasets output by each step can be downloaded from the following links.
 https://drive.google.com/drive/folders/1hePqnF60wMCAHqaYlt4j0K0MMI2j7RHl?usp=sharing
 
-There are 7 folders in total.
+There are 7 folders in total: 
 -UCMerced_LandUse is a Raw dataset in .tif format.
 -UCMerced_LR_64_PNG is the dataset after downsampling conversion format, which serves as the input of the following three SR methods.
 -UCMerced_HR_Truth is the dataset converted to png format.(Ground Truth)
