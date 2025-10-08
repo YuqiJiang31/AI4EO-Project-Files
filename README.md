@@ -72,8 +72,21 @@ Reproduce LPIPS, SSIM, PSNR analysis results: use UCMerced_HR_Bicubic; UCMerced_
 ## Evaluation
 
 
+## License
 
+[MIT License](LICENSE)
 
+## Citation
+
+If you use this code in your research, please cite:
+```
+@software{AI4EO-Project-Files,
+  author = {YuqiJiang31},
+  title = {A Comparative Analysis of Super-Resolution Models for Land Use Classification with Remote Sensing Imagery},
+  year = {2025},
+  url = {https://github.com/YuqiJiang31/AI4EO-Project-Files}
+}
+```
 
 
 
