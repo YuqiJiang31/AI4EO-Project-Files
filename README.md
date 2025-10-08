@@ -63,6 +63,14 @@ Reproduce the classification of resnet18: using UCMerced_HR_Bicubic; UCMerced_HR
 
 Reproduce LPIPS, SSIM, PSNR analysis results: use UCMerced_HR_Bicubic; UCMerced_HR_SwinIR; UCMerced_HR_RealESRGAN as input
 
+## Trainning
+
+
+## Test
+
+
+## Evaluation
+
 
 
 
