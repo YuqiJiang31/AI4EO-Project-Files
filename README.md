@@ -67,7 +67,7 @@ Reproduce LPIPS, SSIM, PSNR analysis results: use UCMerced_HR_Bicubic; UCMerced_
 The dataset, training parameters, and trained model required for training can be downloaded from the following link.
 https://drive.google.com/drive/folders/1gPAVMiKxHU01T3_I45O9x_tvKzcpbQsy?usp=sharing
 
-**0. Configuring Real-ESRGAN**
+## 0. Configuring Real-ESRGAN
 
 ```bash
 git clone https://github.com/xinntao/Real-ESRGAN.git
