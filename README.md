@@ -129,9 +129,18 @@ python realesrgan/train.py -opt options/finetune_realesrgan_x4plus_pairdata.yml 
 ```
 
 **4. Model**
+
 The trained model can be downloaded from the link above in the folder: `experiments/finetune_RealESRGANx4plus_pairdata/net_g_latest.pth`
 
 ## Test
+
+4x Super-Resolution with Bicubic
+```bash
+python Bicubic.py --input Datasets/UCMerced_LR_64_PNG --output Datasets/UCMerced_Bicubic_HR_Bicubic --scale 4
+```
+
+
+
 
 
 ## Evaluation
