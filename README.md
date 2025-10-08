@@ -158,8 +158,25 @@ python inference_realesrgan.py -n net_g_latest -i inputs
 ```
 Results are in the `/Real-ESRGAN/results` folder
 
-
 # Evaluation
+## 1. LPIPS Evaluation
+
+```bash
+python LPIPS.py
+```
+CONFIG = {
+    "GT_DIR": r"E:\Text\AI4EOFINAL\UCMerced_HR_Truth",
+    "SR_DIR": r"E:\Text\AI4EOFINAL\UCMerced_HR_SwinIR",
+    "OUT_DIR": r"E:\Text\AI4EOFINAL\LPIPS_RESULT",
+    "NET": "vgg",
+    "BATCH": 8,
+    "EXTENSIONS": (".png", ".jpg", ".jpeg", ".tif", ".tiff", ".bmp"),
+    "FORCE_CPU": False,
+    "SKIP_MISMATCH": False,
+    "FOLDER_LEVEL_ONLY": False,
+    "VERBOSE": True,
+    "SR_SUFFIX": "_SwinIR"          # Added: extra suffix in SR filenames relative to GT; leave "" if none
+}
 
 
 ## License
