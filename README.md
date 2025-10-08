@@ -129,7 +129,7 @@ python realesrgan/train.py -opt options/finetune_realesrgan_x4plus_pairdata.yml 
 ```
 
 **4. Model**
-The trained model can be downloaded from the link: `experiments/finetune_RealESRGANx4plus_pairdata/net_g_latest.pth`
+The trained model can be downloaded from the link above in the folder: `experiments/finetune_RealESRGANx4plus_pairdata/net_g_latest.pth`
 
 ## Test
 
