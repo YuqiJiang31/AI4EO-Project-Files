@@ -75,7 +75,7 @@ cd Real-ESRGAN
 ```
 The environment of this project is adapted to Real-ESRGAN, so there is no need to configure the environment.
 
-**1. Prepare the dataset**
+## 1. Prepare the dataset
 
 - **gt folder**(Standard reference, high-resolution image):*datasets/UCMerced/train/HR*
 - **lq folder**(low quality, low resolution image):：*datasets/UCMerced/train/LR*
@@ -86,10 +86,10 @@ You can then use the script scripts/create_paired_meta.py to generate the meta i
 python scripts/create_paired_meta.py #Input and output paths are modified within the script
 ```
 
-**2. Download the pre-trained model**
+## 2. Download the pre-trained model
 Download the pre-trained model to the `experiments/pretrained_models` directory. The link above has been downloaded.
 
-**3. Fine-tuning**
+## 3. Fine-tuning
 Modify the options file: `options/finetune_realesrgan_x4plus_pairdata.yml`, especially the `datasets` part, 
 The `option/finetune_realesrgan_x4plus_pairdata.yml` file available for download in the link above has been configured.
 ```yml
@@ -128,7 +128,7 @@ Training with **1 GPU**:
 python realesrgan/train.py -opt options/finetune_realesrgan_x4plus_pairdata.yml --auto_resume
 ```
 
-**4. Model**
+## 4. Model
 
 The trained model can be downloaded from the link above in the folder: `experiments/finetune_RealESRGANx4plus_pairdata/net_g_latest.pth`
 
