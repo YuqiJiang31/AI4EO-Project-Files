@@ -14,7 +14,8 @@ main/
 │   └── ssim_psnr_overall.txt
 ├── SSIM_PSNR_RESULT_RealESRGAN/
 ├── SSIM_PSNR_RESULT_SwinIR/
-├── SwinIR/SwinIR/
+├── SwinIR/SwinIR/model_zoo
+│   └── 003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth
 ├── Bicubic.py
 ├── LPIPS.py
 ├── SSIM_PSNR.py
