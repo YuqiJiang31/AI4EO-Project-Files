@@ -69,10 +69,10 @@ https://drive.google.com/drive/folders/1gPAVMiKxHU01T3_I45O9x_tvKzcpbQsy?usp=sha
 
 **0. Configuring Real-ESRGAN**
 
-    ```bash
-    git clone https://github.com/xinntao/Real-ESRGAN.git
-    cd Real-ESRGAN
-    ```
+```bash
+git clone https://github.com/xinntao/Real-ESRGAN.git
+cd Real-ESRGAN
+```
 The environment of this project is adapted to Real-ESRGAN, so there is no need to configure the environment.
 
 **1. Prepare the dataset**
@@ -134,13 +134,29 @@ The trained model can be downloaded from the link above in the folder: `experime
 
 ## Test
 
-4x Super-Resolution with Bicubic
+# 1. 4x Super-Resolution with Bicubic
 ```bash
 python Bicubic.py --input Datasets/UCMerced_LR_64_PNG --output Datasets/UCMerced_Bicubic_HR_Bicubic --scale 4
 ```
 
+# 2. 4x Super-Resolution with SwinIR
+```bash
+git clone https://github.com/JingyunLiang/SwinIR.git
+cd SwinIR
+```
+Put this project `/SwinIR/SwinIR/model_zoo/003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth` into the `model_zoo folder`
 
+```bash
+python main_test_swinir.py --task real_sr --scale 4 --model_path model_zoo/003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth --folder_lq datasets\
+```
 
+# 3. 4x Super-Resolution with Real-ESRGAN
+The input image is placed in the `/Real-ESRGAN/inputs` folder
+```bash
+cd Real-ESRGAN
+python inference_realesrgan.py -n net_g_latest -i inputs
+```
+Results are in the `/Real-ESRGAN/results` folder
 
 
 ## Evaluation
