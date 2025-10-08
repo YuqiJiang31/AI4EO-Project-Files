@@ -28,12 +28,21 @@ main/
 ├── requirements.txt                # Project dependencies
 └── README.md
 ```
-
-
-
-
-
-
+## Installation
+1. Clone the repository:
+```bash
+git clone https://github.com/YuqiJiang31/AI4EO-Project-Files.git
+cd AI4EO-Project-Files
+```
+2. Create and activate an environment
+```bash
+conda create -y -n v_env python=3.10
+conda activate v_env
+```
+3. Install dependencies:
+```bash
+conda install -r requirements.txt
+```
 
 
 
