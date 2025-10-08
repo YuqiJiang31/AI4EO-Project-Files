@@ -67,31 +67,33 @@ Reproduce LPIPS, SSIM, PSNR analysis results: use UCMerced_HR_Bicubic; UCMerced_
 The dataset, training parameters, and trained model required for training can be downloaded from the following link.
 https://drive.google.com/drive/folders/1gPAVMiKxHU01T3_I45O9x_tvKzcpbQsy?usp=sharing
 
-**0. 配置Real-ESRGAN**
+**0. Configuring Real-ESRGAN**
 
     ```bash
     git clone https://github.com/xinntao/Real-ESRGAN.git
     cd Real-ESRGAN
     ```
+The environment of this project is adapted to Real-ESRGAN, so there is no need to configure the environment.
 
-**1. 准备数据集**
+**1. Prepare the dataset**
 
-- **gt folder**（标准参考，高分辨率图像）：*datasets/UCMerced/train/HR*
-- **lq folder**（低质量，低分辨率图像）：*datasets/UCMerced/train/LR*
+- **gt folder**(Standard reference, high-resolution image):*datasets/UCMerced/train/HR*
+- **lq folder**(low quality, low resolution image):：*datasets/UCMerced/train/LR*
 
-然后，您可以使用脚本scripts/create_paired_meta.py生成元信息（meta_info）txt 文件。
+You can then use the script scripts/create_paired_meta.py to generate the meta information (meta_info) txt file.
 
 ```bash
 python scripts/create_paired_meta.py #Input and output paths are modified within the script
 ```
 
-**2. 下载预训练模型**
-下载预先训练的模型到 `experiments/pretrained_models` 目录下。上面链接已经下载好。
+**2. Download the pre-trained model**
+Download the pre-trained model to the `experiments/pretrained_models` directory. The link above has been downloaded.
 
 **3. Fine-tuning**
-Modify the options file: options/finetune_realesrgan_x4plus_pairdata.yml, especially the `datasets` part, 
-The option/finetune_realesrgan_x4plus_pairdata.yml file available for download in the link above has been configured.
+Modify the options file: `options/finetune_realesrgan_x4plus_pairdata.yml`, especially the `datasets` part, 
+The `option/finetune_realesrgan_x4plus_pairdata.yml` file available for download in the link above has been configured.
 ```yml
+datasets:
   train:
     name: UCMerced_train
     type: RealESRGANPairedDataset
@@ -126,6 +128,8 @@ Training with **1 GPU**:
 python realesrgan/train.py -opt options/finetune_realesrgan_x4plus_pairdata.yml --auto_resume
 ```
 
+**4. Model**
+The trained model can be downloaded from the link: `experiments/finetune_RealESRGANx4plus_pairdata/net_g_latest.pth`
 
 ## Test
 
