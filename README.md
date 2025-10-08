@@ -64,7 +64,19 @@ Reproduce the classification of resnet18: using UCMerced_HR_Bicubic; UCMerced_HR
 Reproduce LPIPS, SSIM, PSNR analysis results: use UCMerced_HR_Bicubic; UCMerced_HR_SwinIR; UCMerced_HR_RealESRGAN as input
 
 ## Trainning
+The dataset, training parameters, and trained model required for training can be downloaded from the following link.
+https://drive.google.com/drive/folders/1gPAVMiKxHU01T3_I45O9x_tvKzcpbQsy?usp=sharing
 
+**1. 准备数据集**
+
+- **gt folder**（标准参考，高分辨率图像）：*datasets/UCMerced/train/HR*
+- **lq folder**（低质量，低分辨率图像）：*datasets/UCMerced/train/LR*
+
+然后，您可以使用脚本scripts/create_paired_meta.py生成元信息（meta_info）txt 文件。
+
+```bash
+python scripts/create_paired_meta.py #Input and output paths are modified within the script
+```
 
 ## Test
 
@@ -98,4 +110,3 @@ If you use this code in your research, please cite:
 
 
 
-https://drive.google.com/drive/folders/1gPAVMiKxHU01T3_I45O9x_tvKzcpbQsy?usp=sharing
