@@ -160,13 +160,11 @@ Results are in the `/Real-ESRGAN/results` folder
 
 # Evaluation
 ## 1. LPIPS Evaluation
-
-```bash
-python LPIPS.py
-```
+Open LPIPS.py and edit the input and output parameters.
+```py
 CONFIG = {
     "GT_DIR": r"E:\Text\AI4EOFINAL\UCMerced_HR_Truth",
-    "SR_DIR": r"E:\Text\AI4EOFINAL\UCMerced_HR_SwinIR",
+    "SR_DIR": r"E:\Text\AI4EOFINAL\UCMerced_HR_SwinIR",  # Switch the output results of three super-resolution algorithms
     "OUT_DIR": r"E:\Text\AI4EOFINAL\LPIPS_RESULT",
     "NET": "vgg",
     "BATCH": 8,
@@ -177,6 +175,10 @@ CONFIG = {
     "VERBOSE": True,
     "SR_SUFFIX": "_SwinIR"          # Added: extra suffix in SR filenames relative to GT; leave "" if none
 }
+```
+```bash
+python LPIPS.py
+```
 
 
 ## License
