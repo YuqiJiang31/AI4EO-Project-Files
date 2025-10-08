@@ -67,6 +67,13 @@ Reproduce LPIPS, SSIM, PSNR analysis results: use UCMerced_HR_Bicubic; UCMerced_
 The dataset, training parameters, and trained model required for training can be downloaded from the following link.
 https://drive.google.com/drive/folders/1gPAVMiKxHU01T3_I45O9x_tvKzcpbQsy?usp=sharing
 
+**0. 配置Real-ESRGAN**
+
+    ```bash
+    git clone https://github.com/xinntao/Real-ESRGAN.git
+    cd Real-ESRGAN
+    ```
+
 **1. 准备数据集**
 
 - **gt folder**（标准参考，高分辨率图像）：*datasets/UCMerced/train/HR*
@@ -77,6 +84,48 @@ https://drive.google.com/drive/folders/1gPAVMiKxHU01T3_I45O9x_tvKzcpbQsy?usp=sha
 ```bash
 python scripts/create_paired_meta.py #Input and output paths are modified within the script
 ```
+
+**2. 下载预训练模型**
+下载预先训练的模型到 `experiments/pretrained_models` 目录下。上面链接已经下载好。
+
+**3. Fine-tuning**
+Modify the options file: options/finetune_realesrgan_x4plus_pairdata.yml, especially the `datasets` part, 
+The option/finetune_realesrgan_x4plus_pairdata.yml file available for download in the link above has been configured.
+```yml
+  train:
+    name: UCMerced_train
+    type: RealESRGANPairedDataset
+    dataroot_gt: datasets/UCMerced/train/HR
+    dataroot_lq: datasets/UCMerced/train/LR
+    meta_info: datasets\UCMerced\meta_info_UCMerced_train_paired.txt
+    io_backend:
+      type: disk
+
+    gt_size: 64  #For multi-GPU parallel training or good GPU performance, you can increase the value to 128 or 256.
+    use_hflip: True
+    use_rot: False
+
+    # data loader
+    use_shuffle: true
+    num_worker_per_gpu: 0
+    batch_size_per_gpu: 12
+    dataset_enlarge_ratio: 1
+    prefetch_mode: ~
+
+  val:
+    name: validation
+    type: PairedImageDataset
+    dataroot_gt: datasets/UCMerced/val/HR
+    dataroot_lq: datasets/UCMerced/val/LR
+    io_backend:
+      type: disk
+```
+
+Training with **1 GPU**: 
+```bash
+python realesrgan/train.py -opt options/finetune_realesrgan_x4plus_pairdata.yml --auto_resume
+```
+
 
 ## Test
 
