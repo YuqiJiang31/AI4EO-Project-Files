@@ -28,23 +28,23 @@ main/
 ├── requirements.txt                # Project dependencies
 └── README.md
 ```
-## Installation
-1. Clone the repository:
+# Installation
+## 1. Clone the repository:
 ```bash
 git clone https://github.com/YuqiJiang31/AI4EO-Project-Files.git
 cd AI4EO-Project-Files
 ```
-2. Create and activate an environment
+## 2. Create and activate an environment
 ```bash
 conda create -y -n v_env python=3.10
 conda activate v_env
 ```
-3. Install dependencies:
+## 3. Install dependencies:
 ```bash
 conda install -r requirements.txt
 ```
 
-## Datasets
+# Datasets
 The raw dataset used in the experiment and the datasets output by each step can be downloaded from the following links.
 https://drive.google.com/drive/folders/1hePqnF60wMCAHqaYlt4j0K0MMI2j7RHl?usp=sharing
 
@@ -63,7 +63,7 @@ Reproduce the classification of resnet18: using UCMerced_HR_Bicubic; UCMerced_HR
 
 Reproduce LPIPS, SSIM, PSNR analysis results: use UCMerced_HR_Bicubic; UCMerced_HR_SwinIR; UCMerced_HR_RealESRGAN as input
 
-## Trainning
+# Trainning
 The dataset, training parameters, and trained model required for training can be downloaded from the following link.
 https://drive.google.com/drive/folders/1gPAVMiKxHU01T3_I45O9x_tvKzcpbQsy?usp=sharing
 
@@ -132,25 +132,25 @@ python realesrgan/train.py -opt options/finetune_realesrgan_x4plus_pairdata.yml 
 
 The trained model can be downloaded from the link above in the folder: `experiments/finetune_RealESRGANx4plus_pairdata/net_g_latest.pth`
 
-## Test
+# Test
 
-# 1. 4x Super-Resolution with Bicubic
+## 1. 4x Super-Resolution with Bicubic
 ```bash
 python Bicubic.py --input Datasets/UCMerced_LR_64_PNG --output Datasets/UCMerced_Bicubic_HR_Bicubic --scale 4
 ```
 
-# 2. 4x Super-Resolution with SwinIR
+## 2. 4x Super-Resolution with SwinIR
 ```bash
 git clone https://github.com/JingyunLiang/SwinIR.git
 cd SwinIR
 ```
-Put this project `/SwinIR/SwinIR/model_zoo/003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth` into the `model_zoo folder`
+Put this project `/SwinIR/SwinIR/model_zoo/003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth` into the `model_zoo `folder
 
 ```bash
 python main_test_swinir.py --task real_sr --scale 4 --model_path model_zoo/003_realSR_BSRGAN_DFO_s64w8_SwinIR-M_x4_GAN.pth --folder_lq datasets\
 ```
 
-# 3. 4x Super-Resolution with Real-ESRGAN
+## 3. 4x Super-Resolution with Real-ESRGAN
 The input image is placed in the `/Real-ESRGAN/inputs` folder
 ```bash
 cd Real-ESRGAN
@@ -159,7 +159,7 @@ python inference_realesrgan.py -n net_g_latest -i inputs
 Results are in the `/Real-ESRGAN/results` folder
 
 
-## Evaluation
+# Evaluation
 
 
 ## License
