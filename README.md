@@ -49,13 +49,13 @@ The raw dataset used in the experiment and the datasets output by each step can 
 https://drive.google.com/drive/folders/1hePqnF60wMCAHqaYlt4j0K0MMI2j7RHl?usp=sharing
 
 There are 7 folders in total.
-UCMerced_LandUse is a Raw dataset in .tif format.
-UCMerced_LR_64_PNG is the dataset after downsampling conversion format, which serves as the input of the following three SR methods.
-UCMerced_HR_Truth is the dataset converted to png format.(Ground Truth)
-UCMerced_Split is the dataset used to fine-tune RealESRGAN after running split_downsample.py
-UCMerced_HR_Bicubic (outputs of Bicubic.py)
-UCMerced_HR_SwinIR (outputs of running SwinIR)
-UCMerced_HR_RealESRGAN (outputs of running RealESRGAN)
+-UCMerced_LandUse is a Raw dataset in .tif format.
+-UCMerced_LR_64_PNG is the dataset after downsampling conversion format, which serves as the input of the following three SR methods.
+-UCMerced_HR_Truth is the dataset converted to png format.(Ground Truth)
+-UCMerced_Split is the dataset used to fine-tune RealESRGAN after running split_downsample.py
+-UCMerced_HR_Bicubic (outputs of Bicubic.py)
+-UCMerced_HR_SwinIR (outputs of running SwinIR)
+-UCMerced_HR_RealESRGAN (outputs of running RealESRGAN)
 
 Reproduce model training: using UCMerced_Split as input.
 
