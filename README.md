@@ -179,7 +179,27 @@ CONFIG = {
 ```bash
 python LPIPS.py
 ```
+## 2. SSIM and PSNR Evaluation
+Open SSIM_PSNR.py and edit the input and output parameters.
+```py
+CONFIG = {
+    "GT_DIR": r"E:\Text\AI4EOFINAL\UCMerced_HR_Truth",
+    "SR_DIR": r"E:\Text\AI4EOFINAL\UCMerced_HR_Bicubic",  # Switch the output results of three super-resolution algorithms
+    "OUT_DIR": r"E:\Text\AI4EOFINAL\SSIM_PSNR_RESULT",
+    "BATCH": 1,
+    "EXTENSIONS": (".png", ".jpg", ".jpeg", ".tif", ".tiff", ".bmp"),
+    "FORCE_CPU": False,
+    "SKIP_MISMATCH": False,
+    "FOLDER_LEVEL_ONLY": False,
+    "VERBOSE": True,
+    "SR_SUFFIX": "",      # additional suffix compared to GT leave blank if not provided
+    "CONVERT_TO_Y": False,
+}
+```
 
+```bash
+python LSSIM_PSNR.py
+```
 
 ## License
 
